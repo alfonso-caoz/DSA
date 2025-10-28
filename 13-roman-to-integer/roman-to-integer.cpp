@@ -11,24 +11,20 @@ public:
                                                 {'D', 500}, 
                                                 {'M', 1000} };
 
-        int result = 0; // Result stays as cero in case of an invalid entry
+        int result = 0; // Result initialized
 
-        // Time complexity O(n)
-        for (int i = 0; i < s.length(); ++i) {
-            if ((i + 1) != s.length()) {
-                // Sum two consecutive values and add it to result: Greater than or Equal to the next one 
-                if (hash_table[s.at(i)] >= hash_table[s.at(i + 1)]) {
-                    result += hash_table[s.at(i)];
-                } else {
-                // |Substract two consecutive values| and add it to result: Less than the next one 
-                    result += (hash_table[s.at(i + 1)] - hash_table[s.at(i)]);
-                    i += 1; // Considering in the result the (i+1) element already
-                }
-            } else 
-                result += hash_table[s.at(i)]; // Last string element
+        // Time complexity O(n) and Space complexity O(1)
+        for (int i = 0; i < s.length() - 1; ++i) {
+            // (i) value greater than or Equal to (i+1) value: Addition
+            if (hash_table[s.at(i)] >= hash_table[s.at(i + 1)]) {
+                result += hash_table[s.at(i)]; // Assigning a (+) to the current value
+            } else {
+            // (i) value less than (i+1) value: Substraction 
+                result -= hash_table[s.at(i)]; // Assigning a (-) to the current value
+            }
         }
 
-        return result;
+        return result + hash_table[s[s.length() - 1]]; // Adding last string element skipped from the for loop
 
     }
 };
