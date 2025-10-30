@@ -10,10 +10,31 @@
  */
 class Solution {
 public:
+    // Iterative Approach: Time Complexity O(n+m). Space Complexity O(1).
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+       ListNode dummy;
+       ListNode* temp = &dummy;
+
+       while (list1 && list2) {
+        if (list1->val < list2->val) {
+            temp->next = list1;
+            list1 = list1->next;
+        } else {
+            temp->next = list2;
+            list2 = list2->next;
+        }
+        temp = temp->next;
+       }
+
+       temp->next = list1 ? list1 : list2;
+
+       return dummy.next; // . notation because it is a struct, not a struct pointer
+    }
+
+/*
     // Recursive Approach: Time Complexity O(n+m). Space Complexity O(n+m): Auxiliar Recursion Stack. 
     // Try an iterative approach to improve Space Complexity to O(1).
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        if (!list1 && !list2) return nullptr;
         if (!list1) return list2;
         if (!list2) return list1;
 
@@ -25,4 +46,6 @@ public:
             return list2;
         }
     }
+*/
+
 };
