@@ -10,8 +10,6 @@ class Solution {
 public:
     // Time Complexity O(m+n). Space Complexity O(1).
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        if (headA == nullptr || headB == nullptr) return nullptr;
-        
         ListNode* ptrA = headA;
         ListNode* ptrB = headB;
 
