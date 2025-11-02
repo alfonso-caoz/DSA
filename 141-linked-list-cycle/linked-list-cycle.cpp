@@ -15,7 +15,7 @@ public:
         ListNode* tortoise = head;
         ListNode* hare = head;
 
-        while (hare && hare->next) {
+        while (hare != nullptr && hare->next != nullptr) {
             tortoise = tortoise->next;
             hare = hare->next->next;
             if (tortoise == hare) return true;
