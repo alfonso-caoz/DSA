@@ -1,6 +1,8 @@
 class Solution {
 public:
-    // Time Complexity O(n). Space Complexity O(1). 
+    // Time Complexity O(n). Space Complexity O(1). ***Avoid using find and count inside of a for loop, Time Complexity can be messed up.
+    // operator[]: if the key does not exist, it inserts it with a default value for int or double: 0. Other types structure problematic.
+    // Hash maps are equal if have same key-value pairs, despite the order.
     bool isAnagram(string s, string t) {
         if (s.length() != t.length()) return false;
 
@@ -8,14 +10,11 @@ public:
         unordered_map<char, int> tHashCount;
 
         for (int i = 0; i < s.length(); ++i) {
-            if (sHashCount.find(s[i]) == sHashCount.end()) sHashCount[s[i]] = 0;
-            else sHashCount[s[i]] = sHashCount[s[i]] + 1;
-
-            if (tHashCount.find(t[i]) == tHashCount.end()) tHashCount[t[i]] = 0;
-            else tHashCount[t[i]] = tHashCount[t[i]] + 1;
+            sHashCount[s[i]] = sHashCount[s[i]] + 1; 
+            tHashCount[t[i]] = tHashCount[t[i]] + 1;
         }
 
-        return sHashCount == tHashCount; // Hash maps are equal if have same key-value pairs, despite the order.
+        return sHashCount == tHashCount;
 
     }
 };
