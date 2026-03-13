@@ -24,6 +24,7 @@ Data Structure and Algorithm (DSA) exercises solved in C++, considering time and
 - [557- Reverse Words in a String III](https://github.com/alfonso-caoz/dsa-cpp/tree/main/src/557-reverse-words-in-a-string-iii)
 - [572- Subtree of Another Tree](https://github.com/alfonso-caoz/dsa-cpp/tree/main/src/572-subtree-of-another-tree)
 - [605- Can Place Flowers](https://github.com/alfonso-caoz/dsa-cpp/tree/main/src/605-can-place-flowers)
+- [674- Longest Continuous Increasing Subsequence](https://github.com/alfonso-caoz/dsa-cpp/tree/main/src/674-longest-continuous-increasing-subsequence)
 - [775- N-ary Tree Preorder Traversal](https://github.com/alfonso-caoz/dsa-cpp/tree/main/src/775-n-ary-tree-preorder-traversal)
 
 <!-- **Medium** -->
@@ -32,5 +33,5 @@ Data Structure and Algorithm (DSA) exercises solved in C++, considering time and
 
 ## Pending Work
 
-- [ ] Solve 25 DSA Exercises: 17/25
+- [ ] Solve 25 DSA Exercises: 18/25
 - [ ] Implement Local Unit Tests with GTest
