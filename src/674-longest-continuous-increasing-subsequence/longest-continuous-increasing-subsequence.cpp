@@ -1,23 +1,23 @@
+#include <algorithm>
+
 class Solution {
 public:
+    // Time Complexity O(n). Space Complexity O(1).
     int findLengthOfLCIS(vector<int>& nums) {
        
-        int LCIS_counter = 1;
-        int LCIS_sub_counter = 1;
-        if (nums.size() == 1) return LCIS_counter;
+        int max_LCIS = 1; // Maximum length so far
+        int current_LCIS = 1; // Current Continuous length found, if broken it will be reset
         
-        for (size_t i = 0; i < nums.size()-1; ++i) {
-            if (nums[i] < nums[i+1]) {
-                ++LCIS_counter;
+        for (size_t i = 1; i < nums.size(); ++i) {
+            if (nums[i] > nums[i-1]) {
+                ++current_LCIS;
+                max_LCIS = std::max(max_LCIS, current_LCIS);
             } else {
-                if (LCIS_sub_counter < LCIS_counter) {
-                    LCIS_sub_counter = LCIS_counter;
-                }
-                LCIS_counter = 1;
+                current_LCIS = 1; // Reset
             }
         }
 
-        return (LCIS_sub_counter < LCIS_counter) ? LCIS_counter : LCIS_sub_counter;
+        return max_LCIS;
 
     }
 };
