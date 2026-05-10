@@ -1,9 +1,12 @@
+#include <vector>
+#include <unordered_map>
+
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
 
         // Initializing hash table
-        unordered_map<int, int> hash_table;
+        std::unordered_map<int, int> hash_table;
 
         // Finding result with Time Complexity O(n)
         for (int i = 0; i < nums.size(); ++i) {
