@@ -1,9 +1,13 @@
+#include <string>
+#include <unordered_map>
+#include <stack>
+
 class Solution {
 public:
-    bool isValid (string s) {
-        unordered_map<char, char> p_map = {{'(',')'}, {'{','}'}, {'[',']'}}; // Hash map to match parentheses
+    bool isValid (std::string s) {
+        std::unordered_map<char, char> p_map = {{'(',')'}, {'{','}'}, {'[',']'}}; // Hash map to match parentheses
 
-        stack<char> open_p_stack; // Stack with opening parentheses (keys) LIFO
+        std::stack<char> open_p_stack; // Stack with opening parentheses (keys) LIFO
 
         // Time complexity O(n) and Space complexity O(n)
         for (int i = 0; i < s.length(); ++i) {
