@@ -1,9 +1,10 @@
-#include <algorithm>
+#include <vector>
+#include <algorithm> // std::max()
 
 class Solution {
 public:
     // Time Complexity O(n). Space Complexity O(1).
-    int findLengthOfLCIS(vector<int>& nums) {
+    int findLengthOfLCIS(std::vector<int>& nums) {
        
         int max_LCIS = 1; // Maximum length so far
         int current_LCIS = 1; // Current Continuous length found, if broken it will be reset
