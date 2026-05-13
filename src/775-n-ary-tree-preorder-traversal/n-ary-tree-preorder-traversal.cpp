@@ -18,15 +18,18 @@ public:
 };
 */
 
+#include <vector>
+#include <stack>
+
 class Solution {
 public:
     // Iterative Approach
     // Time Complexity O(n). Space Complexity O(n) [n: number of nodes. Stack with all nodes].
-    vector<int> preorder(Node* root) {
-        vector<int> ans;
+    std::vector<int> preorder(Node* root) {
+        std::vector<int> ans;
         if (root == nullptr) return ans;
 
-        stack<Node*> stackNodes;
+        std::stack<Node*> stackNodes;
         stackNodes.push(root);
 
         while (!stackNodes.empty()) {
@@ -49,15 +52,15 @@ public:
 public:
     // Recursive Approach
     // Time Complexity O(n). Space Complexity O(n) [n: number of nodes. Implicit Auxiliary Recursive Stack].
-    vector<int> preorder(Node* root) {
-        vector<int> ans;
+    std::vector<int> preorder(Node* root) {
+        std::vector<int> ans;
         aux_preorder(root, ans);
         return ans;
     }
 
 private:
     // Auxiliary Preorder Method
-    void aux_preorder(Node* root, vector<int>& ans) {
+    void aux_preorder(Node* root, std::vector<int>& ans) {
         if (root == nullptr) return;
         ans.push_back(root->val);
         for (auto child : root->children) aux_preorder(child, ans);
