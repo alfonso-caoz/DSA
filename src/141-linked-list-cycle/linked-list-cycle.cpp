@@ -1,11 +1,14 @@
+ #include "../../include/dsa-cpp/linked-list-node.h"
+
 /**
- * Definition for singly-linked list.
+ * Definition for singly-linked list (linked-list-node.h).
  * struct ListNode {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
 class Solution {
 public:
     // Floyd´s cycle finding algorithm or Hare and Tortoise Algorithm
